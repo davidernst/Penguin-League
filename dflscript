@@ -1,0 +1,29 @@
+#!/bin/sh
+
+umask 022
+
+WORKDIR=/home/WWW9/digitalhorse.com/htdocs/dfl
+TMPFILE=$WORKDIR/tmpfile
+ERRFILE=$WORKDIR/errfile
+HTMLFILE=$WORKDIR/mypage.html
+PHPFILE="/dfl/transferdata.php"
+
+( echo "GET $PHPFILE HTTP/1.0" ; \
+  echo "Pragma: no-cache" ; \
+  echo "Host: www.digitalhorse.com" ; \
+  echo "" ; \
+  sleep 240) | \
+  telnet www.digitalhorse.com 80 > $TMPFILE 2> $ERRFILE
+
+  /bin/grep -i -q "ERROR" $TMPFILE
+  if [ $? -ne 0 ]
+  then
+    /bin/sed -e "1,/^$/ d" < $TMPFILE > $HTMLFILE
+  else
+    /bin/cat $ERRFILE
+    exit 1
+  fi
+  /bin/rm -f $TMPFILE $ERRFILE
+
+  exit 0
+

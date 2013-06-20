@@ -1,0 +1,15 @@
+<HTML>
+<HEAD>
+
+<TITLE>Standings</TITLE>
+
+</HEAD>
+<BODY bgcolor="#FFFFFF">
+<TABLE>
+
+<TR><TD>
+<!--#include file="standings.php"-->
+</TD></TR>
+</TABLE>
+</BODY>
+</HTML>

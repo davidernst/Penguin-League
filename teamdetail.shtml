@@ -1,0 +1,12 @@
+<HTML>
+<HEAD>
+
+<TITLE>Penguin League</TITLE>
+
+</HEAD>
+<BODY bgcolor="#ffffff">
+<!--#include file="header.html"-->
+<BR>
+<!--#include file="teamdetail.php"-->
+</BODY>
+</HTML>

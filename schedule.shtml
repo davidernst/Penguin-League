@@ -1,0 +1,15 @@
+<HTML>
+<HEAD>
+
+<TITLE>Schedule</TITLE>
+
+</HEAD>
+<BODY bgcolor="#FFFFFF">
+<TABLE>
+
+<TR><TD>
+<!--#include file="schedule.php"-->
+</TD></TR>
+</TABLE>
+</BODY>
+</HTML>
